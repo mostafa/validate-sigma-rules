@@ -6,7 +6,7 @@ This action is used to validate Sigma rules using the JSON schema. It is used to
 
 ```yaml
 steps:
-    - uses: mostafa/validate-sigma-rules@v0.0.1
+    - uses: mostafa/validate-sigma-rules@latest
       with:
         path: './'
 ```

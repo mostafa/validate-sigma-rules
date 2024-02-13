@@ -21,6 +21,6 @@ runs:
       run: pip install check-jsonschema
     - name: Validate Sigma rules
       shell: bash
-      run: tests/validate-sigma-schema/validate.sh
+      run: ./validate.sh
       env:
         SIGMA_RULES_PATH: ${{ inputs.path }}
