@@ -1,0 +1,23 @@
+name: Validate Sigma Rules
+description: "Validate Sigma rules against the JSON schema"
+inputs:
+  path:
+    description: "Path to the Sigma rules"
+    required: false
+    default: "./"
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: Set up Python
+      uses: actions/setup-python@v5
+    - name: Install dependencies
+      shell: bash
+      run: pip install check-jsonschema
+    - name: Validate Sigma rules
+      shell: bash
+      run: tests/validate-sigma-schema/validate.sh
+      env:
+        SIGMA_RULES_PATH: ${{ inputs.path }}
