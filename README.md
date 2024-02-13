@@ -4,6 +4,8 @@ This action is used to validate Sigma rules using the JSON schema. It is used to
 
 ## Basic usage
 
+For an example repository structure, see the [example repository](https://github.com/mostafa/validate-sigma-rules-example).
+
 ```yaml
 steps:
     - uses: mostafa/validate-sigma-rules@v0
