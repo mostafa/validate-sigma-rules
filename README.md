@@ -19,7 +19,7 @@ The path to the Sigma rules in your repository. This is a optional input and sho
 
 ## Outputs
 
-It returns a zero exit code if the validation is successful and a non-zero exit code if the validation fails.
+It returns a zero exit code if the validation is successful and a non-zero exit code and errors if the validation fails.
 
 ## License
 
