@@ -1,5 +1,8 @@
 name: Validate Sigma Rules
 description: "Validate Sigma rules against the JSON schema"
+branding:
+  icon: check-circle
+  color: green
 inputs:
   path:
     description: "Path to the Sigma rules"
