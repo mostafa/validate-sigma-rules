@@ -10,4 +10,4 @@ fi
 
 # Validate all the Sigma rules in the current directory
 echo "Validating Sigma rules against sigma-schema.json"
-check-jsonschema --schemafile sigma-schema.json $(find ${SIGMA_RULES_PATH} -type f -name "*.yml")
+check-jsonschema --schemafile ${GITHUB_ACTION_PATH}/sigma-schema.json $(find ${GITHUB_WORKSPACE}/${SIGMA_RULES_PATH} -type f -name "*.yml")
