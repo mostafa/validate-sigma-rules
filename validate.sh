@@ -9,7 +9,7 @@ if ! command -v check-jsonschema &>/dev/null; then
 fi
 
 # Set the default values for the environment variables
-if [ -n "${SIGMA_SCHEMA_PATH}" ]; then
+if [ -z "${SIGMA_SCHEMA_PATH}" ]; then
     SIGMA_SCHEMA_PATH="https://raw.githubusercontent.com/SigmaHQ/sigma-specification/main/sigma-schema.json"
 fi
 
@@ -22,7 +22,7 @@ else
 fi
 
 # If we are not running in a GitHub Action, set the default path to the repo root
-if [ -n "${GITHUB_ACTION_PATH}" ]; then
+if [ -z "${GITHUB_ACTION_PATH}" ]; then
     GITHUB_ACTION_PATH=${GITHUB_WORKSPACE}
 fi
 
