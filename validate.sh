@@ -9,11 +9,11 @@ if ! command -v check-jsonschema &>/dev/null; then
 fi
 
 # Set the default values for the environment variables
-if [ -z "${SIGMA_SCHEMA_PATH}" ]; then
+if [ -n "${SIGMA_SCHEMA_PATH}" ]; then
     SIGMA_SCHEMA_PATH="https://raw.githubusercontent.com/SigmaHQ/sigma-specification/main/sigma-schema.json"
 fi
 
-if [ -z "${SIGMA_RULES_PATH}" ]; then
+if [ -n "${SIGMA_RULES_PATH}" ]; then
     # Get Sigma rules from the user-specified path
     FILES=$(find ${GITHUB_WORKSPACE}/${SIGMA_RULES_PATH} -type f -name "*.yml")
 else
@@ -22,7 +22,7 @@ else
 fi
 
 # If we are not running in a GitHub Action, set the default path to the repo root
-if [ -z "${GITHUB_ACTION_PATH}" ]; then
+if [ -n "${GITHUB_ACTION_PATH}" ]; then
     GITHUB_ACTION_PATH=${GITHUB_WORKSPACE}
 fi
 
