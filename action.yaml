@@ -8,6 +8,10 @@ inputs:
     description: "Path to the Sigma rules"
     required: false
     default: "./"
+  schemaPath:
+    description: "Path to the JSON schema"
+    required: false
+    default: "https://raw.githubusercontent.com/SigmaHQ/sigma-specification/main/sigma-schema.json"
 runs:
   using: "composite"
   steps:
@@ -24,3 +28,4 @@ runs:
       run: ${{ github.action_path }}/validate.sh
       env:
         SIGMA_RULES_PATH: ${{ inputs.path }}
+        SIGMA_SCHEMA_PATH: ${{ inputs.schemaPath }}
