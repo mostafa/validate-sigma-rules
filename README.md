@@ -11,17 +11,26 @@ steps:
     - uses: mostafa/validate-sigma-rules@v0
       with:
         path: './'
+        schemaPath: 'https://raw.githubusercontent.com/SigmaHQ/sigma-specification/main/sigma-schema.json'
 ```
 
 ## Inputs
 
-### `path`
+### `path` (optional)
 
 The path to the Sigma rules in your repository. This is a optional input and should be a relative path to the root of the repository. The default value is `./`.
+
+### `schemaPath` (optional)
+
+The path to the JSON schema. This is an optional input and should be a URL to the JSON schema. The default value is using the latest version of the Sigma schema from the [sigma-specification repository](https://github.com/SigmaHQ/sigma-specification).
 
 ## Outputs
 
 It returns a zero exit code if the validation is successful and a non-zero exit code and errors if the validation fails.
+
+## Limitations
+
+It currently only supports a single path to the rules. It does not support multiple paths or globs (for now).
 
 ## License
 
