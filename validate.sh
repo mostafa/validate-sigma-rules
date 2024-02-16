@@ -42,13 +42,12 @@ if [ ! ${SIGMA_SCHEMA_URL} == "" ] && [ ! ${SIGMA_SCHEMA_FILE} == "" ]; then
 fi
 
 # Local schema file is preferred over the URL
-if [ -n ${SIGMA_SCHEMA_FILE} ]; then
+if [ ! ${SIGMA_SCHEMA_FILE} == "" ]; then
     echo "Using the local sigma-schema.json"
     if [ ! -f "${GITHUB_ACTION_PATH}/sigma-schema.json" ]; then
         echo "The local sigma-schema.json does not exist."
         echo "Please download it from ${SIGMA_SCHEMA_URL}"
         echo "and place it in the ${GITHUB_ACTION_PATH} directory"
-        echo "or set the USE_LOCAL_SCHEMA environment variable to false"
         exit 1
     fi
 else

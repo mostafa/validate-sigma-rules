@@ -56,7 +56,7 @@ schemaURL: 'https://raw.githubusercontent.com/SigmaHQ/sigma-specification/main/s
 The path to the JSON schema for Sigma. This is an optional input and should be a relative path to the root of the repository.
 
 > [!IMPORTANT]
-> Either `schemaURL` or `schemaFile` should be provided. If both are provided, an error will be thrown with a non-zero exit code. If none are provided, the action will use the default schema from the [sigma-specification repository](https://github.com/SigmaHQ/sigma-specification), as mentioned above.
+> Either `schemaURL` or `schemaFile` should be provided. If both are provided, an error will be thrown with a non-zero exit code. If `schemaFile` is provided and the file doesn't exist, an error will be thrown with a non-zero exit code. If none are provided, the action will use the default schema from the [sigma-specification repository](https://github.com/SigmaHQ/sigma-specification), as mentioned above.
 
 ## Outputs
 
